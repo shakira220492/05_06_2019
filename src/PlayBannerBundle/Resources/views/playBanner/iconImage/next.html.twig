@@ -1,0 +1,67 @@
+<style>
+    #nextVideoImage {
+        position: absolute;
+        {#background-color: white;#}
+        height: 200px;
+        width: 200px;
+        top: -200px;
+        left: 275px;
+        z-index: 1;
+        border: #1ab7ea;
+        display: none;
+    }
+</style>
+
+<div id='nextVideoImage'>
+    
+</div>
+
+<div id='nextIconButton' class='animated_2Button'
+     style="position: absolute;
+     height: 30px;
+     width: 30px;
+     top: 0px;
+     left: 440px;
+     z-index: 1;">
+    <img style='
+         width:30px; 
+         height:30px; 
+         opacity: 0.9;
+         z-index: 1;' 
+         src="files/images/icons/playBanner/next.png" alt="Mountain View">
+</div>
+
+<script>    
+    $('#nextIconButton')
+    .mouseover(function () {
+        explainNextVideo();
+    })
+    .click(function () {
+        showNextVideo();
+    })
+    .mouseout(function () {
+        hideNextVideo();
+    });
+    
+    function showNextVideo()
+    {
+        get_anotherVideo(kindOfList_1, listId_1, next_videoOrderPosition_1);
+    }
+    
+    function explainNextVideo()
+    { {#alert("previous_video_image: "+next_video_image+
+                "\nkindOfList_1: "+kindOfList_1+
+                "\nlistId_1: "+listId_1+
+                "\nvideoOrderPosition_1: "+videoOrderPosition_1+
+                "\nprevious_videoOrderPosition_1: "+previous_videoOrderPosition_1+
+                "\nnext_videoOrderPosition_1: "+next_videoOrderPosition_1);#}
+        
+        get_anotherVideoData(kindOfList_1, listId_1, next_videoOrderPosition_1, "next");
+    }
+    
+    function hideNextVideo()
+    {
+        var nextVideoImage = document.getElementById("nextVideoImage");
+        nextVideoImage.style.display = "none";
+    }
+</script>

@@ -1,0 +1,69 @@
+<style>
+    #previousVideoImage {
+        position: absolute;
+        {#background-color: white;#}
+        height: 200px;
+        width: 200px;
+        top: -200px;
+        left: -285px;
+        z-index: 1;
+        border: #1ab7ea;
+        display: none;
+    }
+</style>
+
+<div id='previousVideoImage'>
+    
+</div>
+
+<div id='previousIconButton' class='animated_2Button'
+     style="position: absolute;
+     height: 30px;
+     width: 30px;
+     top: 0px;
+     left: 0px;
+     z-index: 1;">
+    <img style='
+         width:30px; 
+         height:30px; 
+         opacity: 0.9;
+         z-index: 1;'  
+         src="files/images/icons/playBanner/previous.png" alt="Mountain View">
+</div>
+
+<script>
+    $('#previousIconButton')
+    .mouseover(function () {
+        explainPreviousVideo();
+    })
+    .click(function () {
+        showPreviousVideo();
+    })
+    .mouseout(function () {
+        hidePreviousVideo();
+    });
+        
+    function showPreviousVideo()
+    {
+        get_anotherVideo(kindOfList_1, listId_1, previous_videoOrderPosition_1);
+    }
+    
+    function explainPreviousVideo()
+    { {#alert("previous_video_image: "+previous_video_image+
+                "\nkindOfList_1: "+kindOfList_1+
+                "\nlistId_1: "+listId_1+
+                "\nvideoOrderPosition_1: "+videoOrderPosition_1+
+                "\nprevious_videoOrderPosition_1: "+previous_videoOrderPosition_1+
+                "\nnext_videoOrderPosition_1: "+next_videoOrderPosition_1);#}
+        
+        get_anotherVideoData(kindOfList_1, listId_1, previous_videoOrderPosition_1, "previous");
+    }
+    
+    function hidePreviousVideo()
+    {
+        var previousVideoImage = document.getElementById("previousVideoImage");
+        previousVideoImage.style.display = "none";
+    }
+</script>
+
+
